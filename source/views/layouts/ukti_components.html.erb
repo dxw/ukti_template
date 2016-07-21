@@ -255,15 +255,235 @@
 
         <!-- secondary header panel -->
         <header class="panel panel--secondary">
-          <h1 class="page-header__title">Apply Now</h1>
-          <p>Tell us how you can meet the requirements for this opportunity and an expert will contact you within five working days to discuss any next steps.</p>
+          <h1 class="page-header__title">Sub-page heading</h1>
+          <div class="opportunity__row">
+            <h4 class="inline">Market(s):</h4>
+            <p class="inline"> Bangladesh</p>
+          </div>
+          <div class="opportunity__row">
+            <h4 class="inline">Sector(s):</h4>
+            <p class="inline">Business &amp; Consumer Services, Construction, Oil &amp; Gas</p>
+            <!-- is not activated for the moment: -->
+            <!-- <button id="more-sectors-button">Load more sectors</button> -->
+          </div>
+          <div class="opportunity__row">
+            <a href="#" class="arrow-link">Apply now</a>
+          </div>
         </header>
 
-        <div class="panel">
+        <div class="opportunity__main panel">
+          <div class="opportunity__teaser">
+            <p>Opportunity teaser lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora enim sed cum hic eos commodi omnis, consequatur asperiores cumque pariatur officiis.</p>
+          </div>
+
+          <div class="opportunity__description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe eaque quae qui animi. Aperiam iste recusandae praesentium fuga tempore perferendis quod soluta quidem impedit tenetur ipsam ut, odit ducimus tempora.</p>
+            <p>Brief description of assignment:</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora necessitatibus aliquid eos, repellendus saepe culpa dolores ipsum omnis quia perspiciatis itaque laboriosam laborum, quam vel possimus deleniti, ab nostrum! Consequatur.</Lore></p>
+          </div>
+
+          <div class="opportunity__row">
+            <div class="icon-block value">
+              <h4 class="icon-block__header">Value of contract:</h4>
+              <p class="icon-block__paragraph">Value unknown</p>
+            </div>
+
+            <div class="icon-block date">
+              <h4 class="icon-block__header">Response date:</h4>
+              <p class="icon-block__paragraph">08/08/2016</p>
+            </div>
+          </div>
+
+          <a href="https://www.exportingisgreat.gov.uk/register-an-interest?opportunity_id=118836" class="arrow-link">Apply now</a>
 
         </div>
 
+        <div class="opportunity__information panel">
+          <h2>Opportunity Subheading</h2>
+          <ul class="info-list">
+            <li class="info-list__item guide">
+              <a class="no-link-styles" href="#" target="_blank">
+                <div class="guide__copy">
+                  <h4 class="guide__label">Guide label</h4>
+                  <p class="guide__country">Country</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
       </div>
+
+
+      <!-- register your interest form -->
+      <div class="register-form panel">
+        <form action="#" method="post" id="form-validation">
+
+          <fieldset class="your-details">
+            <h2>Your details</h2>
+
+            <div class="register-form__row">
+              <label for="first-name" class="required">First name</label>
+              <input type="text" id="first-name" name="first_name" placeholder="Your first name" required="">
+            </div>
+
+            <div class="register-form__row">
+              <label for="last-name" class="required">Last name</label>
+              <input type="text" id="last-name" name="last_name" placeholder="Your last name" required="">
+            </div>
+
+            <div class="register-form__row">
+              <label for="email-address" class="required">Email address</label>
+              <input type="email" id="email-address" name="email_address" placeholder="Your email address" required="">
+            </div>
+
+            <div class="register-form__row">
+              <label for="company-telephone" class="required">Telephone number</label>
+              <input type="text" class="short-input" id="company-telephone" name="company_telephone" maxlength="13" placeholder="Your telephone number" required="">
+            </div>
+          </fieldset>
+
+          <fieldset class="your-business">
+            <h2 class="full-width-border-top">About your business</h2>
+
+            <div id="companies-house-section" class="register-form__row">
+              <label for="company-name" class="required">Company name</label>
+              <input type="text" id="company-name" class="short-input" name="company_name" placeholder="Your company's name" required=""><button type="button" class="btn--dark companies-house-search-btn" search-companies-house="">Search Companies House</button><div id="companies-house-list"></div>
+
+              <div id="companies-house-list">
+                <div class="error-message">Please enter your registered company name</div>
+
+                <ul class="companies-house-list">
+                  <li>
+                    <a class="company-result" href="#">Company Limited</a>
+                    <a href="#" target="_blank"><small>(view on Companies House website)</small></a>
+                  </li>
+                  <li>
+                    <a class="company-result" href="#">Company Gardens</a>
+                    <a href="#" target="_blank"><small>(view on Companies House website)</small></a>
+                  </li>
+                  <li>
+                    <a class="company-result" href="#">Company Foundation</a>
+                    <a href="#" target="_blank"><small>(view on Companies House website)</small></a>
+                  </li>
+                </ul>
+              </div>
+
+              <label for="no-companies-house-number" class="no-companies-house-number">
+                <input type="checkbox" id="no-companies-house-number" name="no_companies_house_number">
+                I don't have a companies House number.
+              </label>
+            </div>
+
+            <fieldset id="company-details" class="company-details" aria-hidden="true" style="display: none;">
+
+              <div class="register-form__row">
+                <label for="company-address" class="required">Company address</label>
+                <input type="text" id="company-address" name="company_address" placeholder="Your company's address">
+              </div>
+
+              <div class="register-form__row companies-house-number">
+                <label for="company-house-number" class="required">Companies house number</label>
+                <input type="text" class="short-input" id="company-house-number" name="company_house_number" placeholder="Companies House number">
+              </div>
+
+              <div class="register-form__row">
+                <label for="company-postcode" class="required">Post code</label>
+                <input type="text" class="short-input" id="company-postcode" name="company_postcode" minlength="5" maxlength="8" placeholder="Your post code">
+              </div>
+
+              <div class="register-form__row">
+                <label for="company-url">Company URL</label>
+                <input type="text" id="company-url" name="company_url" placeholder="Your company's website">
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <fieldset class="your-exporting">
+            <h2 class="full-width-border-top">About your exporting experience</h2>
+
+            <div class="register-form__row">
+              <label for="existing-exporter" class="required">Have you sold products or services to overseas customers?</label>
+              <select id="existing-exporter" name="existing_exporter" required="">
+                <option value="" selected="" disabled="">Select</option>
+                <option value="Not yet">Not yet</option>
+                <option value="Yes, last year">Yes, in the last year</option>
+                <option value="Yes, one two years ago">Yes, 1-2 years ago</option>
+                <option value="Yes, over two years ago">Yes, over 2 years ago</option>
+              </select>
+            </div>
+
+            <div class="register-form__row">
+              <label for="company-sector" class="required">Please indicate which sector you work in</label>
+              <select id="company-sector" name="company_sector" required="">
+                <option value="" selected="" disabled="">Sector</option>
+                <option value="aerospace">Aerospace</option>
+                <option value="agriculture">Agriculture, Horticulture &amp; Fisheries</option>
+                <option value="airports">Airports</option>
+                <option value="automotive">Automotive</option>
+                <option value="biotechnology">Biotechnology &amp; Pharmaceuticals</option>
+                <option value="business">Business &amp; Consumer Services</option>
+                <option value="chemicals">Chemicals</option>
+                <option value="clothing">Clothing, Footwear &amp; Fashion</option>
+                <option value="communications">Communications</option>
+                <option value="construction">Construction</option>
+                <option value="creative">Creative &amp; Media</option>
+                <option value="defence">Defence</option>
+                <option value="education">Education &amp; Training</option>
+                <option value="electronics">Electronics &amp; IT Hardware</option>
+                <option value="environment">Environment</option>
+                <option value="financial">Financial &amp; Professional Services</option>
+                <option value="food">Food &amp; Drink</option>
+                <option value="giftware">Giftware, Jewellery &amp; Tableware</option>
+                <option value="global">Global Sports Infrastructure</option>
+                <option value="healthcare">Healthcare &amp; Medical</option>
+                <option value="household">Household Goods, Furniture &amp; Furnishings</option>
+                <option value="leisure">Leisure &amp; Tourism</option>
+                <option value="marine">Marine</option>
+                <option value="mechanical">Mechanical Electrical &amp; Process Engineering</option>
+                <option value="metallurgical">Metallurgical Process Plant</option>
+                <option value="metals">Metals, Minerals &amp; Materials</option>
+                <option value="mining">Mining</option>
+                <option value="oil">Oil &amp; Gas</option>
+                <option value="ports">Ports &amp; Logistics</option>
+                <option value="power">Power</option>
+                <option value="railways">Railways</option>
+                <option value="renewable">Renewable Energy</option>
+                <option value="retail">Retail and Luxury</option>
+                <option value="security">Security</option>
+                <option value="software">Software &amp; Computer Services</option>
+                <option value="textiles">Textiles, Interior Textiles &amp; Carpets</option>
+                <option value="water">Water</option>
+              </select>
+            </div>
+
+            <div class="register-form__row">
+              <label for="company-explanation" class="required">Tell us how you can meet the requirements for this opportunity.</label>
+              <textarea id="company-explanation" name="company_explanation" cols="30" rows="10" maxlength="1100" required=""></textarea>
+              <span class="description">(max 1100 characters incl. spaces)</span>
+            </div>
+
+            <fieldset class="input-group register-form__row">
+              <label for="terms-and-conditions" class="terms-and-condition">
+                <input type="checkbox" id="terms-and-conditions" name="terms" value="yes">
+                I agree my details may be used for marketing by UKTI and trusted partners
+              </label>
+              <label id="remember-details-checkbox" for="remember-my-details" aria-hidden="false" style="">
+                <input type="checkbox" id="remember-my-details" name="remember_details" value="on">
+                Remember my details
+              </label>
+            </fieldset>
+
+          </fieldset>
+
+          <input type="submit" name="register_interest_submit" class="btn--dark" value="Apply now">
+
+          <div class="register-form__status active">Please fill out all the required fields marked with *</div>
+
+        </form>
+
+      </div>
+
 
     </main>
 
