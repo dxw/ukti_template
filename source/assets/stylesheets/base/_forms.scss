@@ -1,0 +1,112 @@
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0 0 $small-spacing;
+  padding: 0;
+}
+
+input,
+label,
+select {
+  display: block;
+  padding: 12px;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+input {
+  border-radius: 0;
+}
+
+label {
+  padding-left: 0;
+}
+
+label,
+legend {
+  font-family: $helvetica-medium;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  &.required::after {
+    content: "*";
+  }
+
+  abbr {
+    display: none;
+  }
+}
+
+// Is this actually being used or has it been put in just because...
+#{$all-text-inputs},
+select[multiple=multiple] {
+  box-sizing: border-box;
+  margin-bottom: $small-spacing;
+  color: $black;
+  background-color: $base-background-color;
+  border: 0;
+
+  &:disabled {
+    background-color: shade($base-background-color, 5%);
+    cursor: not-allowed;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+
+  + label {
+    display: inline-block;
+  }
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+
+input[type="file"] {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+select {
+  color: $black;
+  margin-bottom: $base-spacing;
+  max-width: 250px;
+
+  @include media($medium-screen) {
+    max-width: auto;
+  }
+}
+
+option {
+  font-size: 0.8em;
+    
+  @include media($medium-screen) {
+    font-size: $base-font-size;
+  }
+}
+
+//styling for invalid safari form fields
+.invalid {
+  input:required:invalid,
+  select:required:invalid,
+  textarea:required:invalid {
+    box-shadow: 0px 0px 3px 3px lighten($red, 10%);
+  }
+
+  select:required:invalid {
+    background: lighten($red, 20%);
+  }
+
+  input[type="radio"]:required:invalid {
+    outline: 1.5px solid lighten($red, 20%);
+  }
+}

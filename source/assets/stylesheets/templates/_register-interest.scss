@@ -1,0 +1,223 @@
+.register-form {
+  @include span-columns(12);
+  margin-top: $base-spacing;
+  padding: $base-spacing;
+  font-size: $small-font-size;
+
+  @include media($medium-screen) {
+    padding: $big-spacing $big-spacing;
+    font-size: $base-font-size;
+  }
+
+  &__row {
+    @include span-columns(12);
+    @include omega;
+    margin-top: $small-spacing;
+
+    @include media($medium-screen) {
+      margin-top: $base-spacing;
+    }
+  }
+
+  label {
+    @include media($medium-screen) {
+      @include span-columns(5);
+    }
+
+    @include media($large-screen) {
+      @include span-columns(4);
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    @include span-columns(12);
+    @include media($medium-screen) {
+      @include span-columns(7);
+      @include omega;
+    }
+
+    @include media($large-screen) {
+      @include span-columns(8);
+      @include omega;
+    }
+  }
+
+  input[type="text"].short-input {
+    @include span-columns(12);
+
+    @include media($medium-screen) {
+      @include span-columns(5);
+    }
+
+    @include media($xlarge-screen) {
+     @include span-columns(4);
+    }
+  }
+
+  .no-companies-house-number {
+    @include span-columns(12);
+
+    @include media($medium-screen) {
+      @include span-columns(7);
+      @include shift(5);
+      @include omega;
+    }
+
+    @include media($large-screen) {
+      @include shift(4);
+    }
+
+    @include media($xlarge-screen) {
+      @include span-columns(8);
+    }
+  }
+
+  .companies-house-search-btn {
+    @include span-columns(12);
+
+    @include media($medium-screen) {
+      @include span-columns(5);
+      @include shift(5);
+      @include omega;
+    }
+
+    @include media($large-screen) {
+      @include shift(4);
+    }
+
+    @include media($xlarge-screen) {
+      @include span-columns(4);
+      @include shift(0);
+      @include omega;
+
+      .lt-ie10 & {
+        @include shift(4);
+      }
+    }
+  }
+
+  .companies-house-list {
+    @include span-columns(12);
+    list-style: none;
+    margin: $small-spacing;
+    padding: 0;
+
+    @include media($medium-screen) {
+      @include span-columns(7);
+      @include shift(5);
+      @include omega;
+    }
+
+    @include media($large-screen) {
+      @include shift(4);
+    }
+
+    @include media($xlarge-screen) {
+      @include span-columns(8);
+      @include omega;
+    }
+
+    li {
+      padding: 0;
+    }
+  }
+
+  .company-details {
+    clear: both;
+  }
+
+  .error-message {
+    @include span-columns(12);
+    clear:left;
+    margin: $small-spacing 0;
+    padding: .5em;
+    color: #f00;
+    font-size: 12px;
+    background-color: $white;
+
+    @include media($medium-screen) {
+      @include span-columns(5);
+      @include shift(4);
+      @include omega;
+    }
+
+    @include media($xlarge-screen) {
+     @include span-columns(8);
+    }
+  }
+
+  .checkbox-label {
+    @include span-columns(3);
+
+    @include media($large-screen) {
+      @include span-columns(2);
+      padding-right: 0;
+    }
+  }
+
+  select {
+    padding: 0;
+    @include media($medium-screen) {
+      margin-top: $base-spacing;
+    }
+  }
+
+  .description {
+    @include media($medium-screen) {
+      @include shift(5);
+    }
+
+    @include media($xlarge-screen) {
+      @include shift(4);
+    }
+  }
+
+  .terms-and-condition {
+    @include span-columns(12);
+  }
+
+  input[type="submit"] {
+    @include span-columns(12);
+
+    @include media($medium-screen) {
+      @include span-columns(5);
+      @include shift(7);
+    }
+
+    @include media($large-screen) {
+      @include span-columns(4);
+      @include shift(8);
+    }
+
+    @include media($xlarge-screen) {
+      @include span-columns(3);
+      @include shift(9);
+    }
+  }
+
+  &__status.active{
+    @include span-columns(12);
+    margin: $base-spacing 0;
+    color: red;
+    font-size: $big-font-size;
+    @include media($large-screen) {
+      text-align: right;
+    }
+  }
+
+  .placeholder {
+    margin-left: 25% !important; // Because the stupid placeholder polyfill puts inline styles on the element that I can't overwrite
+    color: $base-font-color;
+    text-align: left;
+  }
+}
+
+.companies-house-loader {
+  position: absolute;
+  z-index: 9999;
+  width: 32px;
+  height: 32px;
+  background: $white url("../images/loader.gif") no-repeat 0 0;
+}

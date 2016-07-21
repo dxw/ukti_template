@@ -1,0 +1,17 @@
+.frontpage-video {
+  @include span-columns(12 of 12);
+
+
+  @include media($medium-screen) {  
+    @include span-columns(10 of 12);
+    @include shift(1);  
+  }
+
+  &__title{
+    margin: $base-spacing 0;
+
+    @include media($large-screen) {  
+      margin-top: $big-spacing;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+---
+# If you make changes here, be sure to make corresponding changes in lib/govuk_template/engine.rb
+stylesheets:
+- ukti-template
+javascripts:
+- ukti-template
+- oldie-support

@@ -1,0 +1,68 @@
+// Typography
+$helvetica-light: "Helvetica", "Tahoma", "Arial", sans-serif;
+$helvetica-bold: "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+$helvetica-medium: "Helvetica", "Tahoma", "Arial", sans-serif;
+
+$base-font-family: $helvetica-light;
+$heading-font-family: 'Roboto', 'sans-serif';
+
+// Font Sizes
+$small-font-size: 0.875em;
+$base-font-size: 1em;
+$big-font-size: 1.25em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 0px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$big-spacing: $base-spacing * 2;
+$extra-big-spacing: $big-spacing * 2;
+$base-z-index: 0;
+
+$wide-letter-spacing: 0.07em;
+
+$z-top: 9999;
+
+// Colors
+$white: #fff;
+$black: #000;
+
+$stone: #DFD5C5;
+// Great Britain Campaign Tints of Stone 40%:
+$light-grey: #F2EEE8;
+// Great Britain Campaign Tints of Stone 90%:
+$mid-grey: #e2d9cb;
+
+// Great Britain Campaign GREAT Blue:
+$purple: #1E1348;
+// Great Britain Campaign Mid Blue:
+$blue: #00549F;
+// Great Britain Campaign Flag Red:
+$red: #B00D23;
+// Great Britain Campaign GREAT Red:
+$great-red: #E41F13;
+
+// Font Colors
+$base-font-color: #121212;
+$action-color: $black;
+
+// Border
+$base-border-color: $mid-grey;
+$base-border: 1px solid $base-border-color;
+$big-border: 3px solid $base-border-color;
+
+// Background Colors
+$base-background-color: $white;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

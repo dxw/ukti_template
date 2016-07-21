@@ -1,0 +1,118 @@
+.opportunities {
+  @include span-columns(12);
+
+  @include media($medium-screen) {
+    @include span-columns(7);
+    @include omega();
+  }
+
+  @include media($xlarge-screen) {
+    @include span-columns(8);
+    @include omega();
+  }
+
+  &__sub-title {
+    margin-bottom: 0;
+    font-size: $big-font-size;
+    line-height: modular-scale(2);
+    text-transform: uppercase;
+
+    span {
+      font-size: modular-scale(2);
+      padding: 0 3px;
+    }
+
+    @include media($medium-screen) {
+      font-size: $big-font-size;
+    }
+  }
+
+  &__description {
+    margin-bottom: $base-spacing;
+    font-size: 0.75em;
+    color: #888;
+    font-weight: bold;
+  }
+
+  &__item {
+    margin-bottom: $base-spacing;
+    padding-bottom: $base-spacing;
+    border-bottom: $base-border;
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    font-size: $base-font-size;
+
+    a {
+      position: relative;
+      display: block;
+      padding-right: 20px;
+      color: $base-font-color;
+      font-weight: 400;
+      line-height: 1.25;
+
+      &:hover {
+        color: $blue;
+      }
+
+      &:after {
+        position: absolute;
+        right: -4px;
+        top: 2px;
+      }
+    }
+  }
+
+  &__date {
+    margin-top: .3em;
+
+    &:before {
+      content: '';
+      background: url('../images/deadline.svg') no-repeat;
+      height: 12px;
+      width: 12px;
+      float: left;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+  }
+}
+
+#opportunities-subscribe-form {
+  background-color: $stone;
+  margin-bottom: $base-spacing;
+  @include clearfix;
+
+  .subscribe-form__row {
+    @include row();
+    display: inline-block;
+    padding: $small-spacing;
+    width: 100%;
+
+    label {
+      width: 100%;
+
+      @include media($large-screen) {
+        @include span-columns(1 of 6);
+      }
+    }
+
+    input.short-input {
+      width: 100%;
+
+      @include media($large-screen) {
+        @include span-columns(3 of 6);
+      }
+    }
+
+    input.btn--dark {
+      width: 100%;
+
+      @include media($large-screen) {
+        @include span-columns(2 of 6);
+      }
+    }
+  }
+}

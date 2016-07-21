@@ -1,0 +1,55 @@
+.panel {
+    @include clearfix;
+    padding: $base-spacing $small-spacing;
+    background-color: $light-grey;
+
+    @include media($medium-screen) {
+      padding: $big-spacing $base-spacing;
+    }
+
+  &--primary,
+  &--secondary {
+    margin-bottom: $base-spacing;
+    color: $white;
+    text-align: center;
+  }
+
+  &--pointer {
+    position: relative;
+    margin-bottom: 0;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 25px solid;
+      margin-left: -25px;
+      border-color: $light-grey transparent transparent transparent;
+    }
+  }
+
+  &--primary {
+    padding-top: $base-spacing;
+    background-color: $blue;
+
+    &:after{
+      border-top-color: $blue;
+    }
+  }
+
+  &--secondary {
+    padding: $base-spacing;
+    background-color: $purple;
+
+    @include media($medium-screen) {
+      padding: $big-spacing;
+    }
+
+    &:after{
+      border-top-color: $purple;
+    }
+  }
+}

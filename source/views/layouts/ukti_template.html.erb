@@ -1,0 +1,116 @@
+<%= yield :top_of_page %>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en-GB"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en-GB"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9" lang="en-GB"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10" lang="<%= content_for?(:html_lang) ? yield(:html_lang) : "en-GB" %>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<%= content_for?(:html_lang) ? yield(:html_lang) : "en-GB" %>"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <title><%= content_for?(:page_title) ? yield(:page_title) : "Exporting is GREAT" %></title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700" />
+    <link rel="stylesheet" href="<%= asset_path 'ukti-template.css' %>" />
+
+    <!--[if lt IE 9]><script src="<%= asset_path 'oldie-support.js' %>"></script><![endif]-->
+    <script src="<%= asset_path 'modernizr.js' %>"></script>
+
+    <link rel="shortcut icon" href="<%= asset_path 'favicon.png' %>" type="image/png" />
+    <link rel="mask-icon" href="<%= asset_path 'favicon.svg' %>" color="#0b0c0c" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%= yield :head %>
+  </head>
+
+  <body<%= content_for?(:body_classes) ? raw(" class=\"#{yield(:body_classes)}\"") : '' %>>
+
+    <div style="display:none;">
+      <svg>
+        <symbol id="icon-search" viewBox="0 0 1024 1024">
+          <title>search</title>
+          <path class="path1" d="M898.304 791.962l-193.485-193.485c29.184-47.974 45.978-104.192 45.978-164.454 0-174.899-151.603-326.502-326.554-326.502-174.899 0-316.723 141.824-316.723 316.723 0 174.95 151.552 326.554 326.502 326.554 58.163 0 112.64-15.77 159.488-43.162l194.509 194.56c19.098 19.046 49.92 19.046 68.915 0l48.282-48.23c18.995-19.046 12.083-43.008-6.912-62.003zM205.005 424.243c0-121.088 98.15-219.29 219.238-219.29 121.139 0 229.069 107.93 229.069 229.069s-98.15 219.29-219.29 219.29-229.018-107.93-229.018-229.069z"></path>
+        </symbol>
+      </svg>
+    </div>
+
+    <%= yield :body_start %>
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink"><%= content_for?(:skip_link_message) ? yield(:skip_link_message) : "Skip to main content" %></a>
+      </div>
+    </div>
+
+    <% unless @omit_header %>
+    <header class="site-header outer-container <%= yield(:header_class) %>" role="banner">
+      <nav class="navbar" role="navigation">
+        <ul>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+
+      <a href="<%= content_for?(:homepage_url) ? yield(:homepage_url) : "https://www.exportingisgreat.gov.uk/" %>" title="<%= content_for?(:logo_link_title) ? yield(:logo_link_title) : "Go to the Exporting is GREAT homepage" %>" class="site-header__logo">
+        <img class="site-logo" alt="Exporting is Great" src="<%= asset_path 'eig-logo-flag.png' %>" srcset="<%= asset_path 'eig-logo-flag.png' %> 1x, <%= asset_path 'eig-logo-flag-2x.png' %> 2x" />
+      </a>
+
+      <%= yield :inside_header %>
+    </header>
+    <% end %>
+
+    <%= yield :after_header %>
+
+    <main class="main outer-container" role="main" id="content">
+
+      <%= content_for?(:content) ? yield(:content) : yield %>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+
+      <%= yield :footer_top %>
+
+      <aside class="footer-exporting-guide">
+        <div class="outer-container">
+          <h2>Get your essential guide to exporting</h2>
+          <!-- Form -->
+          <div id="exporting-guide-form" class="exporting-guide-form">
+            <form action="#" method="post">
+              <label for="email-address" class="exporting-guide-form__label required">Email address</label>
+              <input type="text" id="email-address" class="exporting-guide-form__input" name="email_address" placeholder="Email address" required>
+              <button type="submit" name="exporting_guide_submit" class="arrow-link exporting-guide-form__submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </aside>
+
+      <div class="outer-container">
+        <!-- Footer nav -->
+        <nav class="footer-nav">
+          <div class="menu-footer-nav-container">
+            <%= yield :footer_support_links %>
+            <ul class="footer">
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Logos -->
+        <div class="footer-logos">
+          <img src="https://www.exportingisgreat.gov.uk/wp-content/themes/exporting-is-great/templates/assets/img/hmg-logo.png" class="footer-logo footer-logo--hmg" alt="HM Government">
+          <img src="https://www.exportingisgreat.gov.uk/wp-content/themes/exporting-is-great/templates/assets/img/eig-logo-flag-footer.png" srcset="https://www.exportingisgreat.gov.uk/wp-content/themes/exporting-is-great/templates/assets/img/eig-logo-flag-footer.png 1x, https://www.exportingisgreat.gov.uk/wp-content/themes/exporting-is-great/templates/assets/img/eig-logo-flag-footer-2x.png 2x" class="footer-logo footer-logo--eig" alt="Exporting is Great">
+        </div>
+      </div>
+    </footer>
+
+    <script src="<%= asset_path "ukti-template.js" %>"></script>
+
+    <%= yield :body_end %>
+  </body>
+</html>

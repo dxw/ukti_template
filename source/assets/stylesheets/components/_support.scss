@@ -1,0 +1,41 @@
+.support {
+  padding: $base-spacing 0;
+
+  .frontpage-list & {
+    padding: 0 0 $small-spacing;
+  }
+
+  &__header {
+    height: 40px;
+  }
+
+  &__icon {
+    float: left;
+    max-width: 30px;
+    max-height: 100%;
+    margin-right: $small-spacing;
+  }
+
+  &__title {
+    float: left;
+    width: 80%;
+    text-transform: uppercase;
+
+    .arrow-link {
+      padding-left: $small-spacing;
+      color: $blue;
+      font-size: 0.625em;
+      text-transform: none;
+
+      &:after {
+        width: 8px;
+        height: 8px;
+        background-size: 8px 8px;
+      }
+    }
+
+    .frontpage-list__item & {
+      text-transform: none;
+    }
+  }
+}

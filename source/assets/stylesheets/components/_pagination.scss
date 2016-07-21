@@ -1,0 +1,37 @@
+.pagination {
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+        margin: 0 5px 5px 0;
+
+        a {
+            display: block;
+            width: 36px;
+            height: 36px;
+            margin: 0;
+            padding: 9px 0;
+            color: $white;
+            font-family: $helvetica-bold;
+            font-size: 18px;
+            line-height: 1;
+            text-transform: none;
+            text-align: center;
+            text-decoration: none;
+            background-color: $mid-grey;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+
+        &.active a {
+            color: $white;
+            background-color: $blue;
+        }
+
+        &.arrow {
+            display: none;
+        }
+    }
+}

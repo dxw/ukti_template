@@ -1,0 +1,41 @@
+.search-form {
+  @include clearfix;
+
+  @include media($medium-screen) {
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  .icon-search {
+    margin: 0 auto;
+    font-size: 22px;
+    color: $blue;
+  }
+
+  .placeholder {
+    color: $base-font-color;
+    text-align: left;
+  }
+
+  &__input {
+    float: left;
+    width: 85%;
+    height: 42px;
+
+    @include media($medium-screen) {
+      width: 90%;
+    }
+  }
+
+  &__submit {
+    float: left;
+    padding: 10px;
+    max-width: 15%;
+    background-color: $light-grey;
+    border: 0;
+
+    @include media($medium-screen) {
+      max-width: 10%;
+    }
+  }
+}

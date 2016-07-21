@@ -1,0 +1,165 @@
+.opportunity {
+  @include span-columns(12);
+
+  &__row {
+    @include row();
+    display: inline-block;
+    width: 100%;
+  }
+
+  &__main {
+    @include span-columns(12 of 12);
+
+    @include media($large-screen) {
+      @include span-columns(8 of 12);
+    }
+  }
+
+  &__teaser {
+    font-size: $big-font-size;
+  }
+
+  &__description {
+    margin: $base-spacing 0;
+  }
+
+  .inline {
+    display: inline;
+  }
+
+  .icon-block {
+    @include span-columns(12 of 12);
+
+    @include media($medium-screen) {
+      @include span-columns(6 of 12);
+      height: auto;
+    }
+
+    &:before {
+      @include span-columns(1 of 6);
+      content: '';
+    }
+
+    &:last-child {
+      @include omega;
+      margin-top: $base-spacing;
+
+      @include media($medium-screen) {
+        margin-top: 0;
+      }
+    }
+
+    &__header {
+      @include span-columns(5 of 6);
+      @include omega;
+      margin-bottom: 0;
+    }
+
+    &__paragraph {
+      @include span-columns(5 of 6);
+    }
+  }
+
+  .value:before {
+    background: url('../images/contract_value.svg') no-repeat;
+    height: 40px;
+    margin-top: 7px;
+  }
+
+  .date:before {
+    background: url('../images/deadline.svg') no-repeat;
+    height: 30px;
+    margin-top: 3px;
+  }
+
+  .arrow-link {
+    margin-top: $base-spacing;
+    @include link-box($blue, $white);
+    @include span-columns(12);
+
+    @include media($medium-screen) {
+      @include span-columns(7);
+      @include shift(5);
+    }
+
+    @include media($large-screen) {
+      @include span-columns(6);
+      @include shift(6);
+    }
+
+    @include media($xlarge-screen) {
+      @include span-columns(5);
+      @include shift(7);
+    }
+  }
+
+  header .arrow-link {
+    @include link-box($white, $blue);
+    @include span-columns(12);
+
+    @include media($medium-screen) {
+      @include span-columns(7);
+      margin: $base-spacing auto 0 auto;
+      float: none;
+      display: inline-block;
+    }
+
+    @include media($large-screen) {
+      @include span-columns(6);
+      margin: $base-spacing auto 0 auto;
+      float: none;
+      display: inline-block;
+    }
+
+    @include media($xlarge-screen) {
+      @include span-columns(5);
+      margin: $base-spacing auto 0 auto;
+      float: none;
+      display: inline-block;
+    }
+
+    &:after {
+      background: url('../images/arrow-blue.svg') no-repeat;
+
+      .lt-ie10 & {
+        background: url('../images/arrow-blue.png') no-repeat;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $white;
+      color: $purple;
+
+      &:after {
+        background: url('../images/arrow-purple.svg') no-repeat;
+        width: 12px;
+        height: 12px;
+        background-size: 12px 12px;
+
+        .lt-ie10 & {
+          background-image: url('../images/arrow-purple.png') no-repeat;
+        }
+      }
+    }
+  }
+
+  &__information {
+    @include span-columns(12 of 12);
+    margin-top: $base-spacing;
+
+    @include media($large-screen) {
+      @include span-columns(4 of 12);
+      margin-top: 0;
+      padding: $big-spacing $small-spacing;
+    }
+
+    h2 {
+      @include media($large-screen) {
+       text-align: center
+      }
+    }
+
+  }
+
+}

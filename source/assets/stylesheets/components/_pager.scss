@@ -1,0 +1,8 @@
+.pager {
+    clear: both;
+    margin-top: $big-spacing;
+
+    @include media($medium-screen) {
+        @include span-columns(12 of 12);
+    }
+}

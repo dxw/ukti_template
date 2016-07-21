@@ -1,0 +1,45 @@
+.partners-challenges {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include media($medium-screen) {
+      @include span-columns(3);
+    }
+
+    &__title {
+        display: block;
+        margin-bottom: $small-spacing;
+        padding: 0.5em 0;
+        text-transform: uppercase;
+    }
+
+    &__item {
+        margin-bottom: $small-spacing;
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        padding: 0.5em;
+        padding-left: 20px;
+        text-transform: none;
+        text-decoration: none;
+
+        &:before {
+            content:'';
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 13px;
+            height: 100%;
+            border: 1px solid $white;
+        }
+
+        &:hover:before,
+        &--active:before {
+            background-color: $white;
+        }
+    }
+}

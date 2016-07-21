@@ -1,0 +1,13 @@
+.export-form-information {
+
+  ul {
+    list-style: disc;
+    padding-left: 0;
+    font-size: 16px;
+
+    li {
+      margin-bottom: $small-spacing;
+      list-style-position: inside;
+    }
+  }
+}

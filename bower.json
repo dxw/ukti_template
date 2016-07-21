@@ -1,0 +1,11 @@
+{
+  "name": "ukti_template",
+  "dependencies": {
+    "jquery": "1.11.2",
+    "bourbon": "latest",
+    "neat": "latest",
+    "normalize-css": "latest",
+    "enquire": "~2.1.2",
+    "jquery-validation": "~1.14.0"
+  }
+}

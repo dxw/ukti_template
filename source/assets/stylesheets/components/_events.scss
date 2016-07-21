@@ -1,0 +1,17 @@
+.event-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.event {
+  &__header {
+    margin: $base-spacing 0 $small-spacing 0;
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+}
+
+

@@ -1,0 +1,65 @@
+.frontpage-title {
+  margin: $base-spacing 0;
+  font-size: 2em;
+}
+
+.frontpage-list {
+  @include span-columns(12);
+  @include display(flex);
+  @include flex-wrap(wrap);
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+
+  &__item {
+    position: relative;
+    @include span-columns(12 of 12);
+    @include display(flex);
+    @include flex-direction(column);
+    margin-bottom: $big-spacing;
+
+    @include media($large-screen) {
+      @include span-columns(4 of 12);
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin: 15px 0;
+
+    &--no-number {
+      margin-left: 0%;
+    }
+
+    @for $i from 1 through 4 {
+      &--#{$i}:before {
+        content: "#{$i}";
+      }
+    }
+
+    &:before {
+      position: absolute;
+      top: -1.3em;
+      width: 2em;
+      height: 2em;
+      font-family: $heading-font-family;
+      line-height: 2em;
+      text-align: center;
+      color: $white;
+      background: $purple;
+
+      @include media($large-screen) {
+        position: absolute;
+        top: -0.5em;
+      }
+    }
+  }
+}
+
+.lt-ie10 .frontpage-list__item {
+  min-height: 538px;
+}

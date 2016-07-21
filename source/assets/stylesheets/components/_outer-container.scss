@@ -1,0 +1,11 @@
+.outer-container {
+  @include outer-container(90%);
+
+  @include media($large-screen) {
+    @include outer-container(90%);
+  }
+
+  @include media($xlarge-screen) {
+    @include outer-container(1000px);
+  }
+}

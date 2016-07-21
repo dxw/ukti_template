@@ -1,0 +1,50 @@
+.partners-list {
+    @include span-columns(12);
+
+    @include media($medium-screen) {
+      @include span-columns(7);
+      @include omega();
+    }
+
+    @include media($xlarge-screen) {
+      @include span-columns(8);
+      @include omega();
+    }
+
+    &__item {
+        @include clearfix;
+        margin-bottom: $base-spacing;
+        padding-bottom: $base-spacing;
+        border-bottom: $base-border;
+    }
+
+    &__title {
+        word-break: break-word;
+    }
+
+    &__logo {
+        @include span-columns(2 of 8);
+    }
+
+    &__content {
+        @include span-columns(6 of 8);
+    }
+
+    &__contact-list {
+        list-style: none;
+        margin: 0 0 1.5em;
+        padding: 0;
+
+        a {
+            text-transform: none;
+        }
+    }
+
+    &--filtering &__item {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+}

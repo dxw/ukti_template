@@ -1,0 +1,14 @@
+{
+  "name": "ukti_template_ejs",
+  "version": "<%= UktiTemplate::VERSION %>",
+  "description": "Embedded JavaScript packaged version of the UKTI EIG template",
+  "keywords": ["ukti", "eig", "ejs", "template"],
+  "bugs": "https://github.com/dxw/ukti_template_ejs/issues",
+  "license": "MIT",
+  "author": "dxw (https://www.dxw.com) and Government Digital Service developers",
+  "main": "views/layouts/ukti_template.html",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/dxw/ukti_template_ejs.git"
+  }
+}

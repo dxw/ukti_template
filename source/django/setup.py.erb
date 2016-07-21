@@ -1,0 +1,13 @@
+from setuptools import setup
+
+setup(
+  name = 'ukti_template_<%= template_abbreviation %>',
+  packages = ['ukti_template'],
+  version = '<%= UktiTemplate::VERSION %>',
+  license = 'MIT',
+  description = '<%= template_name %> packaged version of the UKTI EIG template',
+  author = 'dxw (https://www.dxw.com) and Government Digital Service developers',
+  url = 'http://github.com/dxw/ukti_template',
+  download_url = 'https://github.com/dxw/ukti_template/releases/download/<%= UktiTemplate::VERSION %>/<%= template_abbreviation %>_ukti_template-<%= UktiTemplate::VERSION %>.tgz',
+  keywords = ["UKTI", "EIG", "<%= template_abbreviation %>", "template"],
+)

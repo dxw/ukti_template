@@ -1,0 +1,29 @@
+.site-header {
+  @include outer-container(90%);
+  position: relative;
+  margin-bottom: 50px;
+
+  @include media($large-screen) {
+    margin-bottom: 100px;
+  }
+
+  @include media($xlarge-screen) {
+    max-width: 1000px;
+    margin-bottom: 200px;
+  }
+
+  &__logo {
+    @include span-columns(12);
+    margin-top: $base-spacing;
+
+    @include media($nav-collapse-point) {
+      width: 40%;
+    }
+
+    //fallback for transform translate.
+    .lt-ie9 & {
+      position: relative;
+      margin-top: 30px;
+    }
+  }
+}

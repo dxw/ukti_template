@@ -1,0 +1,317 @@
+<%= yield :top_of_page %>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en-GB"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en-GB"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9" lang="en-GB"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10" lang="<%= content_for?(:html_lang) ? yield(:html_lang) : "en-GB" %>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<%= content_for?(:html_lang) ? yield(:html_lang) : "en-GB" %>"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <title><%= content_for?(:page_title) ? yield(:page_title) : "Exporting is GREAT" %></title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700" />
+    <link rel="stylesheet" href="../../assets/stylesheets/ukti-template.css" />
+
+    <!--[if lt IE 9]><script src="<%= asset_path 'oldie-support.js' %>"></script><![endif]-->
+    <script src="<%= asset_path 'modernizr.js' %>"></script>
+
+    <link rel="shortcut icon" href="<%= asset_path 'favicon.png' %>" type="image/png" />
+    <link rel="mask-icon" href="<%= asset_path 'favicon.svg' %>" color="#0b0c0c" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%= yield :head %>
+  </head>
+
+  <body<%= content_for?(:body_classes) ? raw(" class=\"#{yield(:body_classes)}\"") : '' %>>
+
+    <div style="display:none;">
+      <svg>
+        <symbol id="icon-search" viewBox="0 0 1024 1024">
+          <title>search</title>
+          <path class="path1" d="M898.304 791.962l-193.485-193.485c29.184-47.974 45.978-104.192 45.978-164.454 0-174.899-151.603-326.502-326.554-326.502-174.899 0-316.723 141.824-316.723 316.723 0 174.95 151.552 326.554 326.502 326.554 58.163 0 112.64-15.77 159.488-43.162l194.509 194.56c19.098 19.046 49.92 19.046 68.915 0l48.282-48.23c18.995-19.046 12.083-43.008-6.912-62.003zM205.005 424.243c0-121.088 98.15-219.29 219.238-219.29 121.139 0 229.069 107.93 229.069 229.069s-98.15 219.29-219.29 219.29-229.018-107.93-229.018-229.069z"></path>
+        </symbol>
+      </svg>
+    </div>
+
+    <div class="background">
+      <div class="background__item background--image" style="background-image:url('../../assets/images/backgrounds/banner-img4.jpg');"></div>
+      <div class="background__item background--globe"></div>
+    </div>
+
+    <%= yield :body_start %>
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink"><%= content_for?(:skip_link_message) ? yield(:skip_link_message) : "Skip to main content" %></a>
+      </div>
+    </div>
+
+    <% unless @omit_header %>
+    <header class="site-header outer-container <%= yield(:header_class) %>" role="banner">
+      <nav class="navbar" role="navigation">
+        <ul id="menu-main-navigation" class="nav navbar-nav">
+          <li class="current-menu-item"><a href="#">Active Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </nav>
+
+      <a href="<%= content_for?(:homepage_url) ? yield(:homepage_url) : "https://www.exportingisgreat.gov.uk/" %>" title="<%= content_for?(:logo_link_title) ? yield(:logo_link_title) : "Go to the Exporting is GREAT homepage" %>" class="site-header__logo">
+        <img class="site-logo" alt="Exporting is Great" src="../../assets/images/eig-logo-flag.png" srcset="../../assets/images/eig-logo-flag.png 1x, ../../assets/images/eig-logo-flag-2x.png 2x" />
+      </a>
+
+      <%= yield :inside_header %>
+    </header>
+    <% end %>
+
+    <%= yield :after_header %>
+
+    <main class="main outer-container" role="main">
+
+      <%= content_for?(:content) ? yield(:content) : yield %>
+
+      <!-- primary header panel -->
+      <header class="panel panel--primary panel--pointer">
+
+        <h1 class="archive-header__title">Find an opportunity for your product or service</h1>
+
+        <form role="search" method="get" class="search-form" action="#">
+          <div class="search-form__field">
+            <label for="searchinput" class="search-form__label u-visuallyhidden">Search</label>
+            <input type="search" value="" name="s" class="search-form__input" id="searchinput" placeholder="Search" required>
+            <button type="submit" class="search-form__submit"><svg class="icon-search"><use xlink:href="#icon-search"></use></svg></button>
+          </div>
+        </form>
+      </header>
+
+      <div class="panel">
+
+        <!-- opportunities filters -->
+        <div class="filters">
+          <div class="filters__panel">
+            <h3 class="filters__title">Choose sector <span class="filters__status"></span></h3>
+            <ul class="filters__list">
+              <li class="filters__item">
+                <a class="filters__link" href="#" data-tax="sector" data-term="aerospace">Aerospace</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#" data-tax="sector" data-term="agriculture-horticulture-fisheries">Agriculture, Horticulture &amp; Fisheries</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#" data-tax="sector" data-term="...">...</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#" data-tax="sector" data-term="water">Water</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- <pre>
+            <code class="language-html">
+
+              <div class="filters">
+                <div class="filters__panel">
+                  <h3 class="filters__title">Choose sector <span class="filters__status"></span></h3>
+                  <ul class="filters__list">
+                    <li class="filters__item">
+                      <a class="filters__link" href="#" data-tax="sector" data-term="aerospace">Aerospace</a>
+                    </li>
+                    <li class="filters__item">
+                      <a class="filters__link" href="#" data-tax="sector" data-term="agriculture-horticulture-fisheries">Agriculture, Horticulture &amp; Fisheries</a>
+                    </li>
+                    <li class="filters__item">
+                      <a class="filters__link" href="#" data-tax="sector" data-term="...">...</a>
+                    </li>
+                    <li class="filters__item">
+                      <a class="filters__link" href="#" data-tax="sector" data-term="water">Water</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </code>
+          </pre> -->
+
+        </div>
+
+        <div class="opportunities">
+
+          <!-- opportunities headings -->
+          <h1>h1. There are <span>1719</span> opportunities</h1>
+          <h2 class="opportunities__sub-title">h2. There are <span>1719</span> opportunities</h2>
+          <h3>h3. There are <span>1719</span> opportunities</h3>
+          <h4>h4. There are <span>1719</span> opportunities</h4>
+          <h5>h5. There are <span>1719</span> opportunities</h5>
+          <h6>h6. There are <span>1719</span> opportunities</h6>
+
+
+          <!-- opportunities description -->
+          <p class="opportunities__description">Ordered by response date</p>
+
+          <!-- opportunities email subscription form -->
+          <div id="opportunities-subscribe-form">
+            <form method="POST" action="#">
+              <div class="subscribe-form__row">
+                <h3>Subscribe to email alerts</h3>
+                <p>Enter your e-mail address to receive alerts matching your search.</p>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Your email address" required="" class="short-input">
+                <input type="submit" value="Subscribe" class="btn--dark">
+              </div>
+            </form>
+          </div>
+
+
+          <!-- opportunities results list -->
+          <div id="opportunity-results-list" class="opportunities__list">
+
+            <article class="opportunities__item">
+              <h3 class="opportunities__title">
+                <a class="arrow-link" href="#">Greece - Data processing services</a>
+              </h3>
+              <div class="opportunities__date">09/09/2016</div>
+            </article>
+
+            <article class="opportunities__item">
+              <h3 class="opportunities__title">
+                <a class="arrow-link" href="#">Switzerland - Online recruitment tool for international organisation</a>
+              </h3>
+              <div class="opportunities__date">24/07/2016</div>
+            </article>
+
+            <article class="opportunities__item">
+              <h3 class="opportunities__title">
+                <a class="arrow-link" href="#">Greece - Industry-specific software development services (healthcare)</a>
+              </h3>
+              <div class="opportunities__date">07/09/2016</div>
+            </article>
+
+          </div>
+
+
+          <!-- external link -->
+          <p>This is a paragraph containing an <a href="https://www.gov.uk" class="external-link">external link</a>. Iusto fugit placeat cumque, quibusdam suscipit. Quisquam provident pariatur hic aut impedit eaque amet in, quod temporibus labore consequuntur rerum eum autem.</p>
+
+
+          <!-- data table -->
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Column One</th>
+                <th scope="col">Column Two</th>
+                <th scope="col">Column Three</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Data point 1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <!-- pagination -->
+          <div id="pager">
+            <div class="pager">
+              <ul class="pagination">
+                <li class="arrow disabled unavailable previous">
+                  <a href="#">&laquo;</a>
+                </li>
+                <li class="active current">
+                  <a href="#">1</a>
+                </li>
+                <li class="">
+                  <a href="#">2</a>
+                </li>
+                <li class="">
+                  <a href="#">3</a>
+                </li>
+                <li class="disabled unavailable">
+                  <a href="#">&hellip;</a>
+                </li>
+                <li class=""><a href="#">10</a>
+                </li>
+                <li class="arrow next">
+                  <a href="#">&raquo;</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- sub page -->
+
+      <div class="opportunity">
+
+        <!-- secondary header panel -->
+        <header class="panel panel--secondary">
+          <h1 class="page-header__title">Apply Now</h1>
+          <p>Tell us how you can meet the requirements for this opportunity and an expert will contact you within five working days to discuss any next steps.</p>
+        </header>
+
+        <div class="panel">
+
+        </div>
+
+      </div>
+
+    </main>
+
+
+    <footer class="site-footer" role="contentinfo">
+
+      <%= yield :footer_top %>
+
+      <aside class="footer-exporting-guide">
+        <div class="outer-container">
+          <h2>Get your essential guide to exporting</h2>
+          <!-- Form -->
+          <div id="exporting-guide-form" class="exporting-guide-form">
+            <form action="#" method="post">
+              <label for="email-address" class="exporting-guide-form__label required">Email address</label>
+              <input type="text" id="email-address" class="exporting-guide-form__input" name="email_address" placeholder="Email address" required>
+              <button type="submit" name="exporting_guide_submit" class="arrow-link exporting-guide-form__submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </aside>
+
+      <div class="outer-container">
+        <!-- Footer nav -->
+        <nav class="footer-nav">
+          <div class="menu-footer-nav-container">
+            <%= yield :footer_support_links %>
+            <ul class="footer">
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+              <li><a href="#">Footer link</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Logos -->
+        <div class="footer-logos">
+          <img src="../../assets/images/hmg-logo.png" srcset="../../assets/images/hmg-logo.png 1x, ../../assets/images/hmg-logo-2x.png 2x" class="footer-logo footer-logo--hmg" alt="HM Government">
+          <img src="../../assets/images/eig-logo-flag-footer.png" srcset="../../assets/images/eig-logo-flag-footer.png 1x, ../../assets/images/eig-logo-flag-footer-2x.png 2x" class="footer-logo footer-logo--eig" alt="Exporting is Great">
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../assets/javascripts/ukti-template.js"></script>
+    <script src="../../assets/javascripts/prismjs.js"></script>
+
+    <%= yield :body_end %>
+  </body>
+</html>

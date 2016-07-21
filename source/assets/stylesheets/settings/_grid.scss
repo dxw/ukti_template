@@ -1,0 +1,18 @@
+@import "../../../bower_components/neat/app/assets/stylesheets/neat-helpers";
+
+// Neat Overrides
+$column: 90px;
+$gutter: 30px;
+$grid-columns: 12;
+$max-width: 68.75em;
+
+// New Breakpoints
+// 600px
+$medium-screen: 37.5em;
+// 768px
+$large-screen: 48em;
+// 1100px
+$xlarge-screen: 68.75em;
+
+// 672px
+$nav-collapse-point: 42em;
