@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700" />
     <link rel="stylesheet" href="../../assets/stylesheets/ukti-template.css" />
 
-    <!--[if lt IE 9]><script src="<%= asset_path 'oldie-support.js' %>"></script><![endif]-->
-    <script src="../../assets/javascripts/modernizr.js"></script>
+    <!--[if lt IE 9]><script src="../../assets/javascripts/oldie-support.js"></script><![endif]-->
+    <script src="../../assets/javascripts/modernizr.min.js"></script>
 
     <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/png" />
     <link rel="mask-icon" href="../../assets/images/favicon.svg" color="#0b0c0c" />
@@ -206,13 +206,13 @@
             <tbody>
               <tr>
                 <td>Data point 1</td>
-                <td>2</td>
-                <td>3</td>
+                <td>Data point 2</td>
+                <td>Data point 3</td>
               </tr>
               <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
+                <td>Data point 1</td>
+                <td>Data point 2</td>
+                <td>Data point 3</td>
               </tr>
             </tbody>
           </table>
@@ -530,7 +530,6 @@
     </footer>
 
     <script src="../../assets/javascripts/ukti-template.js"></script>
-    <script src="../../assets/javascripts/prismjs.js"></script>
 
     <%= yield :body_end %>
   </body>

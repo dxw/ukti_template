@@ -8,7 +8,6 @@ module UktiTemplate
         ukti-template.js
         modernizr.min.js
         oldie-support.min.js
-        prismjs.js
       )
     end
   end

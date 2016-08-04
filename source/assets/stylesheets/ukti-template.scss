@@ -1,4 +1,4 @@
-@import "../../../normalize-css/normalise.css";
+@import "../../../bower_components/normalize-css/normalise.css";
 @import "../../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../../../bower_components/neat/app/assets/stylesheets/neat";
 
@@ -40,5 +40,3 @@
 
 @import "templates/footer";
 @import "templates/register-interest";
-
-@import "prismjs/prismjs";
